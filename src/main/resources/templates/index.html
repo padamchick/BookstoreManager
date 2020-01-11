@@ -28,7 +28,7 @@
             <td th:text="${book.author}">Author</td>
             <td th:text="${book.year}">Year</td>
             <td th:text="${book.quantity}">Quantity</td>
-            <td th:text="${book.price}">Price</td>
+            <td th:text="${book.price}+' zł'">Price</td>
             <td>
                 <button type="submit"><a th:href="'/edit/' + ${book.id}" style="text-decoration: none; color:black">Edit</a></button>
                 &nbsp;
