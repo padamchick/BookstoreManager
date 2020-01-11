@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Book Manager</h1>
+    <button type="submit"><a href="new" style="text-decoration: none; color:black">Create New Book</a></button>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book: ${listBooks}">
+            <td th:text="${book.id}">Book ID</td>
+            <td th:text="${book.title}">Title</td>
+            <td th:text="${book.author}">Author</td>
+            <td th:text="${book.year}">Year</td>
+            <td th:text="${book.quantity}">Quantity</td>
+            <td th:text="${book.price}">Price</td>
+            <td>
+                <button type="submit"><a th:href="'/edit/' + ${book.id}" style="text-decoration: none; color:black">Edit</a></button>
+                &nbsp;
+                <button type="submit"><a th:href="'/delete/' + ${book.id}" style="text-decoration: none; color:black" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
