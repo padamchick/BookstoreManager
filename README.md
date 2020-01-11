@@ -15,6 +15,7 @@
 * Spring MVC
 * Hibernate
 * MySQL
+* ThymeLeaf
 
 
 ## Features
